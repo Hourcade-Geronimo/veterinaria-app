@@ -725,3 +725,7 @@ tags
 
 # End of https://www.toptal.com/developers/gitignore/api/csharp,visualstudiocode,node,angular,vim,aspnetcore
 
+
+appsettings.json
+.env
+veterinaria.db
