@@ -5,7 +5,7 @@ using VeterinariaApi.Services;
 namespace VeterinariaApi.Controllers;
 
 [ApiController]
-[Route("apt/auth")]
+[Route("api/auth")]
 public class AuthController(IAuthService authService) : ControllerBase
 {
     [HttpPost("register")]

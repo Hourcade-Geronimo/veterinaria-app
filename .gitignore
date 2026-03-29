@@ -726,6 +726,26 @@ tags
 # End of https://www.toptal.com/developers/gitignore/api/csharp,visualstudiocode,node,angular,vim,aspnetcore
 
 
-appsettings.json
-.env
-veterinaria.db
+# Start my own ignores 
+
+# C# build artifacts
+backend-csharp/**/bin/
+backend-csharp/**/obj/
+
+# SQLite database — contains real data
+backend-csharp/**/*.db
+backend-csharp/**/*.db-shm
+backend-csharp/**/*.db-wal
+
+# ASP.NET Core secrets
+backend-csharp/**/appsettings.json
+
+# Node
+backend-node/node_modules/
+
+# Angular
+frontend-angular/node_modules/
+frontend-angular/dist/
+
+# OS
+.DS_Store
