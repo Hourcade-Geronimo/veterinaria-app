@@ -739,7 +739,7 @@ backend-csharp/**/*.db-wal
 
 # ASP.NET Core secrets
 backend-csharp/**/appsettings.json
-
+backend-csharp/**/appsettings.Development.json
 # Node
 backend-node/node_modules/
 
