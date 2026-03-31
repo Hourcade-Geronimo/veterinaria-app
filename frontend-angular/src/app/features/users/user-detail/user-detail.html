@@ -1,0 +1,55 @@
+<div class="user-detail-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Editar usuario</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      @if (loading) {
+        <div class="loading">Cargando...</div>
+      }
+
+      @if (!loading && user) {
+        <form (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text" [(ngModel)]="dto.name" name="name" required />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" [(ngModel)]="dto.email" name="email" required />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Tipo</mat-label>
+            <mat-select [(ngModel)]="dto.type" name="type" required>
+              <mat-option value="admin">Admin</mat-option>
+              <mat-option value="employee">Empleado</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          @if (errorMessage) {
+            <div class="error">{{ errorMessage }}</div>
+          }
+
+          @if (successMessage) {
+            <div class="success">{{ successMessage }}</div>
+          }
+
+          <div class="actions">
+            <button mat-stroked-button type="button" (click)="goBack()">Volver</button>
+            <button mat-flat-button type="submit" [disabled]="saving">
+              {{ saving ? 'Guardando...' : 'Guardar' }}
+            </button>
+          </div>
+        </form>
+      }
+
+      @if (!loading && !user) {
+        <div class="error">Usuario no encontrado.</div>
+        <button mat-stroked-button (click)="goBack()">Volver</button>
+      }
+    </mat-card-content>
+  </mat-card>
+</div>

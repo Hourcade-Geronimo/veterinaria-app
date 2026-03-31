@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using VeterinariaApi.DTOs.Auth;
+using VeterinariaApi.DTOs.User;
 using VeterinariaApi.Services;
 
 namespace VeterinariaApi.Controllers;
@@ -21,7 +21,7 @@ public class UsersController(IAuthService authService) : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, RegisterDto dto)
+    public async Task<IActionResult> Update(int id, UpdateUserDto dto)
     {
         var user = await authService.UpdateAsync(id, dto);
         return user is null ? NotFound() : Ok(user);

@@ -56,7 +56,7 @@ public class AuthService(AppDbContext db, IConfiguration config) : IAuthService
             : new UserDto(user.Id, user.Name, user.Email, user.Type, user.CreatedAtTime);
     }
 
-    public async Task<UserDto?> UpdateAsync(int id, RegisterDto dto)
+    public async Task<UserDto?> UpdateAsync(int id, UpdateUserDto dto)
     {
         var user = await db.Users.FindAsync(id);
         if (user is null)
@@ -64,7 +64,6 @@ public class AuthService(AppDbContext db, IConfiguration config) : IAuthService
 
         user.Name = dto.Name;
         user.Email = dto.Email;
-        user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password);
         user.Type = dto.Type;
 
         await db.SaveChangesAsync();

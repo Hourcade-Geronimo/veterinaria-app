@@ -1,0 +1,37 @@
+.user-detail-container {
+  padding: 24px;
+  max-width: 600px;
+  margin: 0 auto;
+
+  mat-card {
+    padding: 16px;
+
+    mat-form-field {
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .error {
+      color: #f44336;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .success {
+      color: #4caf50;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .loading {
+      padding: 16px 0;
+      color: #666;
+    }
+  }
+}

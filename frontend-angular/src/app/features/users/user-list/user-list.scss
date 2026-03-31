@@ -1,0 +1,32 @@
+.user-list-container {
+  padding: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  mat-card {
+    mat-card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+
+      .header-actions {
+        margin-left: auto;
+      }
+    }
+
+    table {
+      width: 100%;
+    }
+
+    .loading {
+      display: flex;
+      justify-content: center;
+      padding: 32px;
+    }
+
+    .error {
+      color: #f44336;
+      padding: 16px 0;
+    }
+  }
+}
